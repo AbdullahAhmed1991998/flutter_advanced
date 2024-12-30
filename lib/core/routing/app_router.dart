@@ -5,18 +5,16 @@ import 'package:flutter_advanced_course/feature/onboarding/presentation/pages/on
 
 class AppRouter{
 
-
-
    Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.onBoardingPage:
-        return MaterialPageRoute(builder: (_) => const OnBoardingPage());
+        return MaterialPageRoute(builder: (_) => const OnboardingPage());
       case Routes.loginPage:
         return MaterialPageRoute(builder: (_) => const LoginPage());
       default:
         return MaterialPageRoute(builder: (_) => const Scaffold(
           body: Center(child: Text('Page not found'),),
-        ));
+        ),);
     }
   }
 }
