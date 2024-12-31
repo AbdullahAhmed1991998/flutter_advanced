@@ -5,5 +5,7 @@ class Assets {
   static const String imagesDocLogo = 'assets/images/doc_logo.svg';
   static const String imagesDocLogoLowOpacity = 'assets/images/doc_logo_low_opacity.svg';
   static const String imagesOnboardingDoctor = 'assets/images/onboarding_doctor.png';
+  static const String imagesSplash = 'assets/images/splash.png';
+  static const String imagesSplashAndroid12Logo = 'assets/images/splash_android12_logo.png';
 
 }
