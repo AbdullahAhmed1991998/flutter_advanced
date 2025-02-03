@@ -12,21 +12,13 @@ analyzer:
   #- '**.g.dart'
   errors:
     missing_required_param: error
-    prefer_const_constructors: error
-    prefer_const_declarations: error
-    sort_constructors_first: error
 
 # You can customize the lint rules set to your own liking. A list of all rules
 # can be found at https://dart-lang.github.io/linter/lints/options/options.html
 linter:
   rules:
     missing_required_param: true
-    # Prefer const with constant constructors.
-    prefer_const_constructors: true
-    # Prefer const over final for declarations.
-    prefer_const_declarations: true
-    # Make constructors the first thing in every class
-    sort_constructors_first: true
+
   # Util classes are awesome!
   # avoid_classes_with_only_static_members: false
 

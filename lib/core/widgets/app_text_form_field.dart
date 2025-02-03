@@ -4,6 +4,18 @@ import 'package:flutter_advanced_course/core/theming/styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFormField extends StatelessWidget {
+  final EdgeInsetsGeometry? contentPadding;
+  final InputBorder? focusedBorder;
+  final InputBorder? enabledBorder;
+  final TextStyle? inputTextStyle;
+  final TextStyle? hintStyle;
+  final String hintText;
+  final bool? isObscureText;
+  final Widget? suffixIcon;
+  final Color? backgroundColor;
+  final TextEditingController? controller;
+  final String? Function(String?) validator;
+
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -18,17 +30,6 @@ class AppTextFormField extends StatelessWidget {
     this.controller,
     required this.validator,
   });
-  final EdgeInsetsGeometry? contentPadding;
-  final InputBorder? focusedBorder;
-  final InputBorder? enabledBorder;
-  final TextStyle? inputTextStyle;
-  final TextStyle? hintStyle;
-  final String hintText;
-  final bool? isObscureText;
-  final Widget? suffixIcon;
-  final Color? backgroundColor;
-  final TextEditingController? controller;
-  final Function(String?) validator;
 
   @override
   Widget build(BuildContext context) {
@@ -76,9 +77,8 @@ class AppTextFormField extends StatelessWidget {
       ),
       obscureText: isObscureText ?? false,
       style: TextStyles.font14DarkBlueMedium,
-      validator: (String? value) {
-        final String? validationResult = validator(value) as String?;
-        return validationResult;
+      validator: (value) {
+        return validator(value);
       },
     );
   }
