@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_course/feature/login/data/models/login_request_body.dart';
-import 'package:flutter_advanced_course/feature/login/data/models/login_response.dart';
-import 'package:flutter_advanced_course/feature/login/data/repositories/login_repositorios_impl.dart';
+import 'package:flutter_advanced_course/feature/login/data/models/login_request_body_model.dart';
+import 'package:flutter_advanced_course/feature/login/data/models/login_response_model.dart';
+import 'package:flutter_advanced_course/feature/login/data/repositories/login_repository_impl.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -21,9 +21,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
       await event.when(started: () {
         emit(const LoginState.initial());
-      }, login: (LoginRequestBody loginRequestBody) async{
+      }, login: (LoginRequestBodyModel loginRequestBodyModel) async{
             emit(const LoginState.loading());
-            final response = await _loginRepositoryImpl.login(loginRequestBody);
+            final response = await _loginRepositoryImpl.login(loginRequestBodyModel);
 
 
             await response.when(success: ( loginResponse) async {

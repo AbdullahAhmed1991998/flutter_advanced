@@ -3,9 +3,9 @@ import 'package:flutter_advanced_course/core/helpers/spacing.dart';
 import 'package:flutter_advanced_course/core/theming/styles.dart';
 import 'package:flutter_advanced_course/core/widgets/app_text_button.dart';
 import 'package:flutter_advanced_course/core/widgets/app_text_form_field.dart';
-import 'package:flutter_advanced_course/feature/login/data/models/login_request_body.dart';
+import 'package:flutter_advanced_course/feature/login/data/models/login_request_body_model.dart';
 import 'package:flutter_advanced_course/feature/login/presentation/manager/login_bloc.dart';
-import 'package:flutter_advanced_course/feature/login/presentation/widgets/already_have_account_text.dart';
+import 'package:flutter_advanced_course/feature/login/presentation/widgets/do_not_have_account_text.dart';
 import 'package:flutter_advanced_course/feature/login/presentation/widgets/email_and_password.dart';
 import 'package:flutter_advanced_course/feature/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:flutter_advanced_course/feature/login/presentation/widgets/terms_and_conditions_text.dart';
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
   void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginBloc>().formKey.currentState!.validate()) {
       context.read<LoginBloc>().add(LoginEvent.login(
-          LoginRequestBody(
+          LoginRequestBodyModel(
             email: context.read<LoginBloc>().emailController.text,
             password: context.read<LoginBloc>().passwordController.text,
           )));
