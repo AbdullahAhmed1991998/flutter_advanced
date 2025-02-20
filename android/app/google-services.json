@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "273406938209",
+    "project_id": "flutter-advanced-course-efcb9",
+    "storage_bucket": "flutter-advanced-course-efcb9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273406938209:android:4dbe7a2db17be1b18e2e20",
+        "android_client_info": {
+          "package_name": "com.example.flutter_advanced_course"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuRoIRMaNEy0eG3T1csZZquLfSBjl1AqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
