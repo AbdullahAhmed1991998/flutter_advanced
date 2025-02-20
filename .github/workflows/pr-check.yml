@@ -1,0 +1,21 @@
+name: Check PR for 'فيتشر'
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  check-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Check PR description for 'فيتشر'
+        run: |
+          pr_body=$(curl -s https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }} | jq -r .body)
+          if [[ ! "$pr_body" == *"فيتشر"* ]]; then
+            echo "Error: The PR description must include the word 'فيتشر'."
+            exit 1
+          fi
